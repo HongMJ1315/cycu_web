@@ -1,0 +1,25 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language="javascript">
+	function resize() {
+        parent.document.getElementById("mainframe").height = document.body.scrollHeight; //將子頁面高度傳到父頁面框架
+    }
+	function ShowTime(){
+		var Now=new Date();
+		var par=(new Date(2020,3,24,18,0));
+		var parh=new Date(2020,3,24,0,0)
+		var cd=par-Now;
+		var cdd=parh-Now;
+		//document.getElementById('now').innerHTML ="<p>"+ Now.getFullYear()+"/"+(Now.getMonth()+1)+"/"+Now.getDate()+"/"+Now.getHours()+"/"+Now.getMinutes()+"</p>";;
+		document.getElementById('CD').innerHTML ="<p><span style='font-size:80px;'><span style='color:#000000;'><span style='background-color:#FFFFFF;'>倒數"+( Math.floor(cdd/(1000 * 60 * 60 * 24))+1)+"天"+(Math.floor(cd%(24*60*60*1000)/(1000*60*60)))+"小時"+((Math.floor(cd%(24*60*60*1000)/(1000*60)))%60)+"分"+((Math.floor(cd%(24*60*60*1000)/(1000)))%60)+"秒</span></span></span></p>";;
+		setTimeout('ShowTime()',1);
+	}
+	
+</script>
+</head>
+<body onload="ShowTime()" onload="resize();">
+<div id="CD"></div>
+</body>
+
+ 
+
